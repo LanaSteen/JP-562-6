@@ -152,10 +152,64 @@
 
 
 
-		   Print();
+			//  Print();
 
-			Console.WriteLine();
+			//Console.WriteLine();
+
+
+
+
+			//User user1 = new User("rame", 20, "12345678");
+
+			//user1.Name = "rame2";
+
+			//user1.Age = 20;
+
+			//user1.Pass = Console.ReadLine();
+
+			//user1.Colors =  [ "red", "green", "blue" ];
+
+			//Person pers = new Person();
+			//pers.Colors = ["red", "green", "blue"];
+
+
+
+
+			Product product1 = new Product();
+
+			product1.Name = "Product1"; 
+			product1.Price = 10.99m;
+			product1.Brand = "Brand1";
+			product1.Colors = [Color.Red, Color.Green, Color.Blue];
+
+
+
+			Product product2 = new Product();
+
+			product2.Name = "Product2";
+			product2.Price = 10.99m;
+			product2.Brand = "Brand1";
+			product2.Colors = [Color.Red, Color.Green, Color.Blue];
+
+			Console.WriteLine(product2);
+			//product1.DisplayInfo();
+
+
+			//product2.DisplayInfo();
+
+
+			float x = 10.5f;
+			double y = 20.5;
+			decimal z = 30.5m;
+
+
+			DateTime now = DateTime.Now;
+
+			Console.WriteLine(now.Year);
+
+
 		}
+
 	
 	
 
@@ -169,3 +223,10 @@
 	
 	}
 }
+
+
+//  სახელი
+
+// ფასი   --   უარყოფითი არ შეიძლება
+
+// ბრენდი
