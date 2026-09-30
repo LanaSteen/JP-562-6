@@ -208,6 +208,20 @@
 			Console.WriteLine(now.Year);
 
 
+			//User us = new User("rame", 20, "12345678");
+
+			User us = new();
+
+			Console.WriteLine(us.Age);
+
+			us.Age = 30;
+
+
+
+			us.Print("rame", "sdsff");
+
+
+
 		}
 
 	

@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace Lesson1
 {
 	internal class User
 	{
-	
+		public User()
+		{
+		}	
 
 		public User(string name, int age, string pass)
 		{
@@ -14,6 +17,24 @@ namespace Lesson1
 			Age = age;
 			Pass = pass;
 		}
+
+		public User(string name)
+		{
+			Name = name;
+		}
+
+
+		public User( int age, string pass)
+		{
+			Age = age;
+			Pass = pass;
+		}
+	
+
+
+		//overload 
+
+
 
 		// constructor
 
@@ -45,6 +66,9 @@ namespace Lesson1
 		}
 
 
+
+
+
 		private string _pass;
 
 		
@@ -70,8 +94,32 @@ namespace Lesson1
 		public string[] Colors { get; set; }
 
 
+		public void DisplayInfo()
+		{
+			Console.WriteLine($" {Name}, {Age}, {Pass}");
+		}
+
+
+
+		public void Print(string name)
+		{
+			Console.WriteLine(name);
+		}
+		public void Print(string name, string name2)
+		{
+			Console.WriteLine(name);
+			Console.WriteLine(name2);
+		}
+
 
 		//propfull
 
 	}
 }
+
+
+
+// oop  
+//1.encapsulation
+//2.inheritance
+//3.polymorphism
