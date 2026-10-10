@@ -14,7 +14,7 @@
 
 
 
-			//List<Product> products = new List<Product>();
+			List<Product> products = new List<Product>();
 
 
 			//			public string Name { get; set; }
@@ -25,23 +25,23 @@
 
 			//public int Amount { get; set; }
 
+			decimal sum = decimal.Parse(Console.ReadLine());
+			for (int i = 0; i < 1; i++)
+			{
+				Product product = new();
+				Console.WriteLine("პროდუქტის სახელი");
+				product.Name = Console.ReadLine();
+				Console.WriteLine("პროდუქტის ფასი");
+				product.Price= decimal.Parse(Console.ReadLine());
+				product.Category = (Category)Enum.Parse(typeof(Category), Console.ReadLine()); //Tablet;
 
-			//for (int i = 0; i < 3; i++)
-			//{
-			//	Product product = new();
-			//	Console.WriteLine("პროდუქტის სახელი");
-			//	product.Name = Console.ReadLine();
-			//	//Console.WriteLine("პროდუქტის ფასი");
-			//	//product.Price= decimal.Parse(Console.ReadLine())*1m;
-			//	product.Category = Category.Tablet;
+				product.Color.Add(Color.Red);
+				Console.WriteLine("პროდუქტის რაოდენობა");
+				product.Amount = int.Parse(Console.ReadLine());
 
-			//	product.Color.Add(Color.Red);
-			//	Console.WriteLine("პროდუქტის რაოდენობა");
-			//	product.Amount = int.Parse( Console.ReadLine());
+				products.Add(product);
 
-			//   products.Add(product);
-
-			//}
+			}
 
 
 			//foreach (var item in products)
@@ -121,7 +121,7 @@
 			//product.Name = "sfdfgfgf";
 
 
-			Console.WriteLine(Factorial(5));
+			//Console.WriteLine(Factorial(5));
 
 
 
@@ -143,31 +143,31 @@
 		//2 * 2 2
 		//2 * 2 1
 
-		public static int Pow(int num, int pow)   // 2,3
-		{
-			if(pow == 1)
-			{
-				return num;
-			}
+		//public static int Pow(int num, int pow)   // 2,3
+		//{
+		//	if(pow == 1)
+		//	{
+		//		return num;
+		//	}
 
-			return num * Pow(num, pow - 1);
-		}
-
-
-		//5 * 4 * 3 * 2 * 1
+		//	return num * Pow(num, pow - 1);
+		//}
 
 
-		public static int Factorial(int num) 
-		{
-			if(num == 1)
-			{
-				return 1;
-			}
-
-			return num * Factorial(num - 1);
+		////5 * 4 * 3 * 2 * 1
 
 
-		}
+		//public static int Factorial(int num) 
+		//{
+		//	if(num == 1)
+		//	{
+		//		return 1;
+		//	}
+
+		//	return num * Factorial(num - 1);
+
+
+		//}
 
 	}
 }
