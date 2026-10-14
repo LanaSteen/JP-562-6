@@ -203,6 +203,10 @@
 			decimal z = 30.5m;
 
 
+
+
+			var xx = 5; // intsx
+
 			DateTime now = DateTime.Now;
 
 			Console.WriteLine(now.Year);
@@ -220,6 +224,9 @@
 
 			us.Print("rame", "sdsff");
 
+
+
+			Console.WriteLine();
 
 
 		}

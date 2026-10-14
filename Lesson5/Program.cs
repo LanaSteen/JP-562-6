@@ -54,7 +54,15 @@
 
 			//	Console.WriteLine();
 			//}
-
+			//
+			//
+			//
+			int[] arr = [100, 32, 600, 600, 23];
+			var ramesia = arr.ToHashSet();
+			foreach (var item in arr)
+			{
+				Console.WriteLine(item);
+			}
 
 
 
@@ -62,12 +70,12 @@
 			// კოლექციები
 			// მასივი , ლისტი
 
-			//HashSet<int> numbers = new HashSet<int>();
+			HashSet<int> numbers = new HashSet<int>();
 
-			//numbers.Add(1);
-			//numbers.Add(1);
-			//numbers.Add(1);
-			//numbers.Add(2);
+			numbers.Add(1);
+			numbers.Add(1);
+			numbers.Add(1);
+			numbers.Add(2);
 
 			//foreach (var item in numbers)
 			//{

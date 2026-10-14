@@ -143,7 +143,7 @@ namespace Lesson4
 
 
 
-			//List<string> names = new() {"John", "Jane", "Andria", "Bob" };
+			List<string> names = new() {"John", "Jane", "Andria", "Bob" };
 
 
 			//var index2 = names.IndexOf("Andria");

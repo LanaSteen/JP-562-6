@@ -1,4 +1,6 @@
-﻿namespace Lesson6
+﻿using System.Collections;
+
+namespace Lesson6
 {
 	internal class Program
 	{
@@ -88,6 +90,18 @@
 
 
 			Console.WriteLine(names.Find("s"));
+
+
+
+
+
+
+
+
+			Member[] members2 = { new Member { Name = "saxeli", Score = 100 }, new Member { Name = "jane", Score = 100 }, new Member { Name = "joe", Score = 100 } };
+
+
+			members2.Find(new Member { Name = "saxeli", Score = 100 });
 
 
 

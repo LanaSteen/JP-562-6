@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Lesson1
 {
-	internal class User
+	internal class User : Object
 	{
 		public User()
 		{

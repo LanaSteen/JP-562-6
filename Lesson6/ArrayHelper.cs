@@ -34,7 +34,7 @@ namespace Lesson6
 		//generic <>
 
 
-		public static void PrintArray<T>(this T[] arr)
+		public static void PrintArray<x>(this x[] arr)
 		{
 			foreach (var item in arr)
 			{

@@ -14,9 +14,9 @@ namespace Lesson6
 			return Score.CompareTo(other.Score);
 		}
 
-		public override bool Equals(object? obj)
+		public override bool Equals(object? rame)
 		{
-			return Score == ((Member)obj).Score && Name == ((Member)obj).Name;
+			return Score == ((Member)rame).Score && Name == ((Member)rame).Name;
 		}
 
 		public override int GetHashCode()

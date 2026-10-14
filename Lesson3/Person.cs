@@ -15,7 +15,9 @@ namespace Lesson3
 			Console.WriteLine($"{Name} is walking");
 		}
 
-		public abstract void SayHello(); // Abstract method, must be implemented in derived classes
+		public abstract void SayHello(); // Abstract method,
+										 // must be implemented
+										 // in derived classes
 	}
 }
 //abstract

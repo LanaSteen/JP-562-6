@@ -7,4 +7,5 @@
     <Project Path="Lesson6/Lesson6.csproj" Id="8a5f06ff-ffee-4b98-9b86-1871abd01d93" />
   </Folder>
   <Project Path="Game/Game.csproj" Id="56738448-5b81-4f31-bc9d-152f9c0f6a5a" />
+  <Project Path="Lesson7/Lesson7.csproj" Id="39b95592-b3a3-4f54-bc62-dcb5cf214458" />
 </Solution>
