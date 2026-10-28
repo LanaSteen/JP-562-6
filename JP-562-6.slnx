@@ -9,6 +9,7 @@
     <Project Path="Lesson8/Lesson8.csproj" Id="6f6b0c6b-8ba6-4d23-bf22-d8c05e457310" />
     <Project Path="Lesson9/Lesson9.csproj" Id="ba55e92a-a524-428d-a202-c89677d961a7" />
   </Folder>
+  <Project Path="ConsoleProject/ConsoleProject.csproj" Id="57fcfb3d-10b7-445f-b1c5-5e9fa48acb5b" />
   <Project Path="Game/Game.csproj" Id="56738448-5b81-4f31-bc9d-152f9c0f6a5a" />
   <Project Path="Lesson10/Lesson10.csproj" Id="b6acc032-d574-4aa8-b7f0-dd40604fb49a" />
 </Solution>
