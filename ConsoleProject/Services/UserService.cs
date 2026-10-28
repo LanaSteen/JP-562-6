@@ -19,7 +19,13 @@ namespace ConsoleProject.Services
 
 		public void RegisterUser(User user)
 		{
-			user.Id = 1;
+			var users = _userRepository.GetAllUsers();
+			int maxId = 0;
+			if (users.Count != 0)
+			{
+				maxId= users.Max(u => u.Id);
+			}
+			user.Id = ++maxId;
 			if (user == null)
 			{
 				Console.WriteLine("User cannot be null.");
