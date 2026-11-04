@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleProject.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -17,8 +18,10 @@ namespace ConsoleProject.Models
 			
 			   if(!value.Contains("@"))
 			   {
-					Console.WriteLine("Email inválido");
-			   }
+					//Console.WriteLine("Email inválido");
+					//throw new Exception("Email inválido");
+					throw new InvalidEmailException("Email inválido");
+				}
 			   _email = value;
 			}
 		}

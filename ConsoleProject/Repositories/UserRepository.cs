@@ -7,7 +7,7 @@ namespace ConsoleProject.Repositories
 {
 	internal class UserRepository
 	{
-		private readonly string _filePath = "C:\\Users\\l4nst\\Desktop\\JP-562-6\\Lesson10\\Data\\users.txt";
+		private readonly string _filePath = "C:\\Users\\l4nst\\Desktop\\JP-562-6\\ConsoleProject\\Data\\user.txt";
 
 
 

@@ -31,9 +31,11 @@ namespace ConsoleProject.Services
 				Console.WriteLine("User cannot be null.");
 				return;
 			}
+			user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
 
 			_userRepository.SaveUser(user);
 		}
+
 
 
 

@@ -6,11 +6,11 @@ using System.Text;
 
 namespace ConsoleProject.Menu
 {
-	internal class Menu
+	internal class UserMenu
 	{
 		private readonly UserService _userService;
 
-		public Menu(UserService userService)
+		public UserMenu(UserService userService)
 		{
 			_userService = userService;
 		}
@@ -21,10 +21,8 @@ namespace ConsoleProject.Menu
 			Console.WriteLine("Welcome to the User Management System");
 
 
-			Console.WriteLine("1. Register");
-			Console.WriteLine("2. Login");
-			Console.WriteLine("0. Exit");
-			string choice = Console.ReadLine();
+		
+			string choice = "";
 
 			while(choice != "0")
 			{
