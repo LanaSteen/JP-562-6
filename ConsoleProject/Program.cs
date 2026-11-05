@@ -14,16 +14,9 @@ namespace ConsoleProject
 				.SetBasePath(AppContext.BaseDirectory)
 				.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
 				.Build();
-			ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
-			{
-				builder.AddConsole();
-				
-			});
-
-			ILogger<EmailService> emailServiceLogger = new Logger<EmailService>(loggerFactory);
-
+			
 			UserRepository userRepository = new UserRepository();
-			EmailService emailService = new EmailService(configuration, emailServiceLogger);
+			EmailService emailService = new EmailService(configuration);
 			UserService userService = new UserService(userRepository, emailService);
 			UserMenu userMenu = new UserMenu(userService);
 

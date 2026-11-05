@@ -12,18 +12,16 @@ namespace ConsoleProject.Services
 //https://myaccount.google.com/apppasswords
 //Microsoft.Extensions.Configuration
 //Microsoft.Extensions.Configuration.Json
-//dotnet add package Microsoft.Extensions.DependencyInjection
-//dotnet add package Microsoft.Extensions.Logging
-//dotnet add package Microsoft.Extensions.Logging.Console
+
 	public class EmailService : IEmailService
 	{
 		private readonly IConfiguration _configuration;
-		private readonly ILogger<EmailService> _logger;
 
-		public EmailService(IConfiguration configuration, ILogger<EmailService> logger)
+
+		public EmailService(IConfiguration configuration)
 		{
 			_configuration = configuration;
-			_logger = logger;
+		
 		}
 
 		public void SendEmail(string toEmail, string subject, string message)
@@ -52,12 +50,12 @@ namespace ConsoleProject.Services
 
 				mailMessage.To.Add(toEmail);
 
-				client.SendMailAsync(mailMessage);
-				_logger.LogInformation("მეილი წარმატებით გაიგზავნა მისამართზე: {Email}", toEmail);
+				client.Send(mailMessage);
+				Console.WriteLine($"Mail sent successfully to: {toEmail}", toEmail);
 			}
 			catch (Exception ex)
 			{
-				_logger.LogError(ex, "მეილის გაგზავნა ვერ მოხერხდა მისამართზე: {Email}", toEmail);
+				Console.WriteLine( $"{ex.Message}: Error sending email to: {toEmail}", toEmail);
 				throw;
 			}
 		}
