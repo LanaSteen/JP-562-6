@@ -7,7 +7,15 @@ namespace ConsoleProject.Repositories
 {
 	internal class UserRepository
 	{
-		private readonly string _filePath = "C:\\Users\\l4nst\\Desktop\\JP-562-6\\ConsoleProject\\Data\\user.txt";
+		private readonly string _filePath = @"../../../Data/user.txt";
+			
+			
+			
+			///Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "user.txt");
+
+
+
+		//"C:\\Users\\l4nst\\Desktop\\JP-562-6\\ConsoleProject\\Data\\user.txt";
 
 
 
@@ -31,12 +39,58 @@ namespace ConsoleProject.Repositories
 				user.Email = line[2];
 				user.Password = line[3];
 				user.IsLogged = bool.Parse(line[4]);
+				user.VerificationCode = line[5];
+				user.IsVerified = bool.Parse(line[6]);
 				users.Add(user);
 			}
 
 			return users;
 		}
 
+
+
+
+
+		public void VerifyUser(string email, string verificationCode)
+		{
+			var users = GetAllUsers();
+			var user = users.FirstOrDefault(x => x.Email == email);
+
+
+			if (user == null)
+			{
+				Console.WriteLine("User not found");
+			}
+
+			if(user.VerificationCode == verificationCode)
+			{
+				Console.WriteLine("user verified");
+				user.IsVerified = true;
+
+
+				string[] userText = new string[users.Count];
+
+
+				for (int i = 0; i < users.Count; i++)
+				{
+					users[i].IsVerified = true;
+					userText[i] = users[i].ToString();
+				}
+
+
+				File.WriteAllText(_filePath, string.Empty);
+
+				File.AppendAllLines(_filePath, userText);
+
+
+				/// update in file IsVerify = true
+
+			}
+			else
+			{
+				Console.WriteLine("Verification code is not correct");
+			}
+		}
 
 
 

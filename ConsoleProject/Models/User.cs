@@ -29,9 +29,15 @@ namespace ConsoleProject.Models
 		public string Password { get; set; }
 		public bool IsLogged { get; set; } = false;
 
+
+		public string VerificationCode { get; set; }///21212
+
+
+		public bool IsVerified { get; set; } = false;
+
 		public override string? ToString()
 		{
-			return $"{Id}|{Name}|{Email}|{Password}|{IsLogged}";
+			return $"{Id}|{Name}|{Email}|{Password}|{IsLogged}|{VerificationCode}|{IsVerified}";
 		}
 	}
 }
