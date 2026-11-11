@@ -6,6 +6,8 @@ using Microsoft.Extensions.Logging;
 
 namespace ConsoleProject
 {
+
+	//Spectre.Console.Cli     nuget
 	internal class Program
 	{
 		static void Main(string[] args)
@@ -18,7 +20,13 @@ namespace ConsoleProject
 			UserRepository userRepository = new UserRepository();
 			EmailService emailService = new EmailService(configuration);
 			UserService userService = new UserService(userRepository, emailService);
-			UserMenu userMenu = new UserMenu(userService);
+
+			FoodRepository foodRepository = new FoodRepository();
+			FoodService foodService = new FoodService(foodRepository);
+			ClientMenu clientMenu = new ClientMenu(foodService);
+
+
+			UserMenu userMenu = new UserMenu(userService, clientMenu);
 
 			userMenu.ShowMainMenu();
 

@@ -1,1 +1,2 @@
 1|dd|sojajo3451@fulldiets.com|$2a$11$7gmElL/yWuqR7H/S/n5LQOhqgVirJOFZHgsMiRvvEDI7VXiJRA2lm|True|9681|True
+2|ff|vejir17691@chuwel.com|$2a$11$aY/HfHMaKYWFJ3nwevH8aOc69dWor9w75FO9G4QnTthltcmk6d2Qe|False|9425|False
