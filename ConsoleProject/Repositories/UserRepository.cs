@@ -1,4 +1,5 @@
-﻿using ConsoleProject.Models;
+﻿using ConsoleProject.Exceptions;
+using ConsoleProject.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -48,6 +49,24 @@ namespace ConsoleProject.Repositories
 		}
 
 
+		public void ChangeFile(List<string> usersInString)
+		{
+			File.WriteAllText(_filePath, "");
+			File.AppendAllLines(_filePath, usersInString);
+		}
+
+
+
+		public User GetUserByEmail(string email)
+		{
+			var users = GetAllUsers();
+
+			var user = users.FirstOrDefault(x => x.Email == email);
+
+
+			return user;
+
+		}
 
 
 
@@ -59,7 +78,9 @@ namespace ConsoleProject.Repositories
 
 			if (user == null)
 			{
-				Console.WriteLine("User not found");
+				//Console.WriteLine("User not found");
+				throw new UserNotFoundException("User not found");
+				
 			}
 
 			if(user.VerificationCode == verificationCode)
@@ -88,7 +109,8 @@ namespace ConsoleProject.Repositories
 			}
 			else
 			{
-				Console.WriteLine("Verification code is not correct");
+				//Console.WriteLine("Verification code is not correct");
+				throw new InvalidVerificationCodeException();
 			}
 		}
 

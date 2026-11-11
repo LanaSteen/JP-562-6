@@ -6,9 +6,10 @@ namespace ConsoleProject.Exceptions
 {
 	internal class InvalidEmailException : Exception
 	{
-		public InvalidEmailException()
+		public InvalidEmailException() : base("Invalid email address.")
 		{
 		}
+		
 
 		public InvalidEmailException(string? message) : base(message)
 		{

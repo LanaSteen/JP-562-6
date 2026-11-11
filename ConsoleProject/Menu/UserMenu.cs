@@ -28,6 +28,7 @@ namespace ConsoleProject.Menu
 			{
 				Console.WriteLine("1. Register");
 				Console.WriteLine("2. Login");
+				Console.WriteLine("3. Verify Email");
 				Console.WriteLine("0. Exit");
 				choice = Console.ReadLine();
 				switch (choice)
@@ -38,6 +39,9 @@ namespace ConsoleProject.Menu
 					case "2":
 						ShowLoginMenu();
 						break;
+					case "3":
+						ShowVerifyEmailMenu();
+						break;
 
 					default:
 						Console.WriteLine("Invalid choice. Please try again.");
@@ -45,7 +49,17 @@ namespace ConsoleProject.Menu
 				}
 			}
 		}
-		
+
+
+
+		private void ShowVerifyEmailMenu()
+		{
+			Console.WriteLine("Enter email:");
+			string email = Console.ReadLine();
+			Console.WriteLine("Enter verification code:");
+			string code = Console.ReadLine();
+			_userService.VerifyUser(email, code);
+		}
 
 		private void ShowRegisterMenu()
 		{
@@ -67,6 +81,11 @@ namespace ConsoleProject.Menu
 			user.Email = Console.ReadLine();
 			Console.WriteLine("Enter password:");
 			user.Password = Console.ReadLine();
+
+
+			_userService.LoginUser(user.Email, user.Password);
+
+
 		}
 
 

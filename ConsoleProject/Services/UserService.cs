@@ -1,4 +1,5 @@
-﻿using ConsoleProject.Models;
+﻿using ConsoleProject.Exceptions;
+using ConsoleProject.Models;
 using ConsoleProject.Repositories;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,71 @@ namespace ConsoleProject.Services
 		}
 
 
+		public void VerifyUser(string email, string verificationCode)
+		{
+
+			//todo validations 
+			if(string.IsNullOrEmpty(email))
+			{
+				throw new EmailNullexception();  
+			}
+
+			if(string.IsNullOrWhiteSpace(verificationCode))
+			{
+				throw new VerificationCodeNullException();
+			}
+
+			_userRepository.VerifyUser(email, verificationCode);
+
+		}
+
+
+		public void LoginUser(string email, string passwiord)
+		{
+			if (string.IsNullOrWhiteSpace(email))
+			{
+				throw new EmailNullexception();
+			}
+			if (string.IsNullOrWhiteSpace(passwiord))
+			{
+				throw new PasswordNullexception();
+			}
+			/// validations if email or password ar empty
+
+			var userFromFile = _userRepository.GetUserByEmail(email);
+
+			if(BCrypt.Net.BCrypt.Verify(passwiord, userFromFile.Password)  && userFromFile.IsVerified)
+			{
+				Console.WriteLine("Loged In succesfully");
+
+				var users = _userRepository.GetAllUsers();
+
+				List<string> userInStrings = new List<string>();
+
+
+				foreach (var item in users)
+				{
+					if(item.Email == email)
+					{
+						item.IsLogged = true;
+					}
+
+
+					userInStrings.Add(item.ToString());
+				}
+
+
+				_userRepository.ChangeFile(userInStrings);
+				
+
+			}
+			else
+			{
+				throw new PasswordNotMatchException();
+			}
+
+
+		}
 
 
 	}
